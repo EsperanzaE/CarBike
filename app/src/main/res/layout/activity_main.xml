@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxCoches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/coches"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="19dp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/motos"
+            app:layout_constraintLeft_toRightOf="@id/checkBoxCoches"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="132dp"
+            tools:layout_editor_absoluteY="19dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margenRadioGroups"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/radioGroupCoches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="143dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonCocheIzda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_coche_izquierda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCocheDrcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_coche_derecha" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCocheDoble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_coche_doble" />
+        </RadioGroup>
+
+        <RadioGroup
+
+            android:id="@+id/radioGroupMotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="143dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonMotoDrcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_moto_izquierda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMotoIzda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_moto_derecha" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMotoDoble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/imagen_moto_doble" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/ListviewCochesMotos"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearRadioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>
