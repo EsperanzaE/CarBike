@@ -12,35 +12,38 @@ import java.util.ArrayList;
 
 public class Adaptador extends BaseAdapter {
 
-    private ArrayList<Object> listaVehiculos;
+    private ArrayList<Object> arrayListVehiculos;
     private Context context;
 
-    public Adaptador(ArrayList<Object> listaVehiculos, Context context) {
-        this.listaVehiculos = listaVehiculos;
+    public Adaptador(ArrayList<Object> arrayListVehiculos, Context context) {
+        this.arrayListVehiculos = arrayListVehiculos;
         this.context = context;
     }
-
+//devolver el número de elementos del arrayList de Vehiculos
     @Override
     public int getCount() {
-        return listaVehiculos.size();
+
+        return arrayListVehiculos.size();
     }
+    //devolver el nodo del array qye está en la posición i. Es un tipo Object
     @Override
-    public Object getItem(int i) {
-        return listaVehiculos.get(i);
+    public Object getItem(int position) {
+        return arrayListVehiculos.get(position);
+    }
+
+    //devolver el id de la posicion i del array
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        Coche coche=(Coche) getItem(i);
+    public View getView(int position, View view, ViewGroup viewGroup) {
+        Car coche=(Car) getItem(position);
         LayoutInflater layoutInflater=LayoutInflater.from(context);
         view=layoutInflater.inflate(R.layout.car_row_left,null);
-        ImageView imageView= view.findViewById(R.id.image);
-        TextView textView = view.findViewById(R.id.name);
+        ImageView imageView= view.findViewById(R.id.car_image);
+        TextView textView = view.findViewById(R.id.car_name);
         imageView.setImageResource(coche.getImagen());
         textView.setText(coche.getNombre());
         return view;

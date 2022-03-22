@@ -1,10 +1,10 @@
 package com.example.carbike;
 
-public class Coche {
+public class Car {
     private String nombre;
     private int imagen;
 
-    public Coche(String nombre, int imagen) {
+    public Car(String nombre, int imagen) {
         this.nombre = nombre;
         this.imagen = imagen;
     }

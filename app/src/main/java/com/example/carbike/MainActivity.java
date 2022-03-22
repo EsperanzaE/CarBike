@@ -10,14 +10,13 @@ import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener,
-        RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity  {
     CheckBox checkBoxCoches;
     CheckBox checkBoxMotos;
     RadioGroup radioGroupCoches;
     RadioGroup radioGroupMotos;
-    ArrayList<Object> arrayList;
-    ListView listaVehiculos;
+    ArrayList<Object> arrayListVehiculos;
+    ListView listaViewVehiculos;
     Adaptador adaptador;
 
     @Override
@@ -31,25 +30,20 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         radioGroupCoches=findViewById(R.id.radioGroupCoches);
         radioGroupMotos=findViewById(R.id.radioGroupMotos);
 
-        listaVehiculos =findViewById(R.id.ListviewCochesMotos);
+        listaViewVehiculos =findViewById(R.id.listViewVehiculos);
 
  //       checkBoxCoches.setOnCheckedChangeListener(this);
  //       checkBoxMotos.setOnCheckedChangeListener(this);
 
  //       radioGroupCoches.setOnCheckedChangeListener(this);
  //       radioGroupMotos.setOnCheckedChangeListener(this);
+//creo un adaptador que extienda de BaseAdapter
+        arrayListVehiculos=Controlador.llenarArrayListCoches();
 
-        adaptador=new Adaptador(lista, this );
-
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        adaptador=new Adaptador(arrayListVehiculos, this );
+        listaViewVehiculos.setAdapter(adaptador);
 
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-    }
 }
